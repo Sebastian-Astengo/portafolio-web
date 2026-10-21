@@ -111,15 +111,32 @@ if (form) {
     const role = String(data.get('role') || '').trim();
     const interest = String(data.get('interest') || data.get('type') || '').trim();
     const message = String(data.get('message') || '').trim();
-    const subject = encodeURIComponent('Consulta empresarial: ' + company);
-    const body = encodeURIComponent(
-      'Hola, soy ' + name + (role ? ', del área de ' + role : '') + ', de ' + company + ' (' + email + ').\n\nMe interesa explorar: ' + interest + '.\n\n' + message + '\n\nQuisiera conversar sobre una evaluación inicial.'
-    );
+    const summary =
+      'Consulta para Cauce Energía\n\nNombre: ' + name + '\nEmpresa: ' + company + '\nCorreo: ' + email +
+      (role ? '\nÁrea: ' + role : '') + '\nInterés: ' + interest + '\n\n' + (message || 'Quisiera conversar sobre una evaluación inicial.');
     const note = document.querySelector('#form-note');
-    if (note) {
-      note.textContent = 'Tu aplicación de correo está preparando el mensaje. Revísalo y envíalo desde allí.';
-      note.classList.add('success');
+    const showCopied = () => {
+      if (note) {
+        note.textContent = 'Resumen copiado. Ya puedes compartirlo con tu contacto de Cauce Energía.';
+        note.classList.add('success');
+      }
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(summary).then(showCopied).catch(() => {
+        if (note) note.textContent = 'No se pudo copiar automáticamente. Selecciona y copia los datos del formulario.';
+      });
+    } else {
+      const temporary = document.createElement('textarea');
+      temporary.value = summary;
+      temporary.setAttribute('readonly', '');
+      temporary.style.position = 'fixed';
+      temporary.style.opacity = '0';
+      document.body.appendChild(temporary);
+      temporary.select();
+      const copied = document.execCommand('copy');
+      temporary.remove();
+      if (copied) showCopied();
+      else if (note) note.textContent = 'No se pudo copiar automáticamente. Selecciona y copia los datos del formulario.';
     }
-    window.location.href = 'mailto:hola@cauceenergia.example?subject=' + subject + '&body=' + body;
   });
 }
