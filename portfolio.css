@@ -14,3 +14,5 @@
 .motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
 .project-row[data-reveal]:nth-child(even){transition-delay:.08s}
 @media(prefers-reduced-motion:reduce){.motion-ready [data-reveal]{opacity:1;transform:none;transition:none!important}}
+
+.hero-kicker{position:absolute;top:clamp(112px,17vh,175px);left:var(--gutter);margin:0;color:var(--soft);font-size:13px;font-weight:600;letter-spacing:.045em}.hero-kicker span{color:#748075}
