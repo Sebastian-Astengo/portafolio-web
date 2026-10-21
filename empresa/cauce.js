@@ -46,20 +46,20 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 
 const sectorContent = {
   industria: {
-    number: '01',
-    kicker: 'OPERACIONES INDUSTRIALES',
+    number: 'Industria',
+    kicker: 'Operaciones industriales',
     title: 'La energía como parte<br>de la estrategia productiva.',
     copy: 'Consideramos turnos, equipos de alto consumo y las ventanas disponibles para integrar una solución compatible con el ritmo de producción.'
   },
   retail: {
-    number: '02',
-    kicker: 'COMERCIO Y SERVICIOS',
+    number: 'Comercio',
+    kicker: 'Comercio y servicios',
     title: 'Una visión coordinada<br>para espacios distribuidos.',
     copy: 'Comparamos sedes, horarios y necesidades compartidas para planificar decisiones energéticas consistentes en distintos locales.'
   },
   logistica: {
-    number: '03',
-    kicker: 'LOGÍSTICA Y ALMACENAMIENTO',
+    number: 'Logística',
+    kicker: 'Logística y almacenamiento',
     title: 'Continuidad pensada<br>para operaciones dinámicas.',
     copy: 'Evaluamos cubiertas, horarios y prioridades operativas para encontrar oportunidades que acompañen el movimiento de cada centro.'
   }
