@@ -1,12 +1,12 @@
 # Portafolio web — Sebastián
 
-Sitio estático publicado en GitHub Pages con tres proyectos: Cauce Energía, la tienda gamer Punto de guardado y una web conceptual para una clínica dental.
+Sitio estático publicado en GitHub Pages con tres proyectos: Cauce Energía, la tienda gamer Punto de guardado y Pausa, una identidad conceptual para una clínica dental.
 
 | Proyecto | Ruta | Alcance |
 | --- | --- | --- |
 | Cauce Energía | `/empresa/` | Sitio corporativo multipágina |
 | Punto de guardado | `/tienda/` | Catálogo gamer y bolsa demostrativa |
-| Clínica dental | `/clinica/` | Presentación, fotos de referencia y flujo de reserva conectado a Supabase cuando se configure |
+| Pausa Dental | `/clinica/` | Identidad editorial, fotografías de referencia y flujo de reserva conectado a Supabase cuando se configure |
 
 ## Arquitectura de la clínica
 

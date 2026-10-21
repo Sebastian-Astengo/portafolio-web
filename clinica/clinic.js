@@ -3,19 +3,11 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 
-  const photoObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
-    const current = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!current) return;
-    const key = current.target.dataset.scene;
-    document.querySelectorAll('[data-clinic-photo]').forEach((image) => image.classList.toggle('is-active', image.dataset.clinicPhoto === key));
-  }, { threshold: [0.15, 0.35, 0.6] }) : null;
-  document.querySelectorAll('.photo-scene').forEach((section) => photoObserver?.observe(section));
-
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
     }), { threshold: 0.08 });
-    const targets = '.intro .lede,.intro .intro-actions,.intro .intro-footnote,.section-heading>p,.service-list li,.visit-intro>p,.visit-steps li,.team-section>p,.team-section .text-link,.booking-section>.booking-intro,.booking-section .booking-step,.faq-list details,.contact-section>p';
+    const targets = '.opening-copy .lede,.opening-copy .intro-actions,.opening-copy .intro-footnote,.care-section .section-lede,.care-list li,.section-content>.section-lede,.visit-steps li,.people-copy>p,.people-copy .text-link,.booking-content>.booking-intro,.booking-content .booking-step,.faq-list details';
     document.querySelectorAll('.photo-scene').forEach((section) => {
       section.querySelectorAll(targets).forEach((element, index) => {
         element.classList.add('reveal-item'); element.style.setProperty('--reveal-delay', `${Math.min(index, 5) * 65}ms`); revealObserver.observe(element);

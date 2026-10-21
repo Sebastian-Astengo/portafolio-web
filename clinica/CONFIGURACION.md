@@ -1,6 +1,6 @@
 # Configuración del sitio dental
 
-Este proyecto es una **implementación conceptual**. El repo no identifica una clínica real; por eso no incluye un nombre comercial, horarios, precios, equipo, dirección ni testimonios inventados. Antes de abrir reservas, la clínica debe entregar y verificar todos los datos indicados abajo.
+Este proyecto es una **implementación conceptual**. Pausa es el nombre de trabajo de la identidad; el repo no identifica una clínica real. No incluye horarios, precios, equipo, dirección ni testimonios inventados. Antes de abrir reservas, la clínica debe entregar y verificar todos los datos indicados abajo.
 
 ## Requisitos
 
