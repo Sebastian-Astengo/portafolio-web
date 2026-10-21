@@ -1,41 +1,47 @@
 # Portafolio web — Sebastián
 
-Cuatro conceptos web listos para publicar como sitio estático en GitHub Pages. Cauce Energía ahora incluye seis páginas conectadas: inicio, soluciones, aplicaciones, método, empresa y contacto.
+Sitio estático publicado en GitHub Pages con tres proyectos: Cauce Energía, la tienda gamer Punto de guardado y una web conceptual para una clínica dental.
 
-| Demo | Ruta | Enfoque |
+| Proyecto | Ruta | Alcance |
 | --- | --- | --- |
-| Cauce Energía | `/empresa/` | Presentación de una empresa ficticia de energía solar |
-| Nativa Estudio | `/tienda/` | Tienda digital con catálogo y bolsa interactiva |
-| Valeria Ríos | `/persona/` | Presentación profesional de arquitecta |
-| Brisa 28 | `/inmobiliaria/` | Landing de proyecto residencial con formulario de contacto |
+| Cauce Energía | `/empresa/` | Sitio corporativo multipágina |
+| Punto de guardado | `/tienda/` | Catálogo gamer y bolsa demostrativa |
+| Clínica dental | `/clinica/` | Presentación, fotos de referencia y flujo de reserva conectado a Supabase cuando se configure |
 
-El sitio principal está en `index.html`. Cada demo incluye su HTML, CSS y JavaScript en una carpeta independiente. No requiere Node.js, paquetes ni proceso de compilación.
+## Arquitectura de la clínica
 
-## Verlo en tu computadora
+- Frontend estático responsive en `clinica/`, publicado por GitHub Pages.
+- PostgreSQL, autenticación, políticas RLS y funciones server-side en `supabase/`.
+- La base de datos es el registro de reservas; una restricción de exclusión impide solapamientos por profesional.
+- Google Calendar lee ocupaciones y sincroniza eventos con las funciones Edge. Los eventos no contienen nombre, teléfono, correo ni notas clínicas.
+- Correo transaccional y recordatorios se procesan mediante una cola idempotente; WhatsApp queda como integración opcional.
+- El panel `/clinica/admin.html` exige usuario autenticado con rol autorizado.
+- La clínica y sus servicios se dejan sin datos ficticios. No se muestran horas ni se aceptan reservas hasta conectar un backend y cargar horarios reales.
 
-Abre `index.html` en un navegador. Las fotografías se sirven desde Unsplash, así que requieren conexión a internet.
+## Activación
 
-## Personalizar antes de presentarlo
+Consulta `clinica/CONFIGURACION.md` para crear un proyecto Supabase, aplicar la migración, cargar servicios, profesionales y horarios confirmados, configurar Google Calendar y correo, crear el primer usuario administrador y desplegar las funciones. Las claves privadas se guardan en los secretos de Supabase; nunca en GitHub Pages.
 
-- Cambia “Sebastián” y `hola@ejemplo.com` en `index.html` por tu nombre y contacto.
-- Los nombres, negocios, inmuebles, textos, precios y correos de las demos son contenido conceptual para portafolio. Sustitúyelos si ya tienes proyectos reales.
-- La marca Cauce Energía es ficticia y su web de empresa es multipágina. Incluye navegación responsive, filtros por tipo de operación, pestañas, acordeones, animaciones de entrada y un formulario demostrativo que prepara un correo usando `mailto:`.
-- La bolsa de Nativa es una interacción demostrativa; no procesa pagos ni pedidos.
-- El formulario de Brisa 28 abre un correo mediante `mailto:`; no almacena ni envía datos a un servidor.
-- Revisa los enlaces de contacto `@ejemplo.com` y `@nativa.example` antes de compartir el sitio.
+La web incluye políticas provisionales para revisión: antes de recibir datos personales, la clínica debe completar su identidad, finalidades, plazos, canales de ejercicio de derechos y demás información aplicable. Esta implementación no constituye una certificación legal.
 
-## Publicar con GitHub Pages
+## Desarrollo local
 
-El workflow `.github/workflows/pages.yml` publica el contenido cuando se hace push a la rama `main`. En GitHub, abre **Settings → Pages** y selecciona **GitHub Actions** como fuente de publicación. En repositorios privados, GitHub Pages requiere un plan que permita Pages privado; con GitHub Free se necesita cambiar el repositorio a público. Cuando termine el workflow, GitHub mostrará la URL del sitio en esa sección.
-
-Si todavía no tienes un repositorio:
+Requiere Node.js y Supabase CLI. Sirve los archivos estáticos desde la raíz para conservar las rutas:
 
 ```powershell
-git init -b main
-git add .
-git commit -m "Build four professional portfolio websites"
-git remote add origin https://github.com/TU-USUARIO/portafolio-web.git
-git push -u origin main
+py -m http.server 8080
 ```
 
-Reemplaza `TU-USUARIO` por tu usuario de GitHub y crea antes un repositorio vacío llamado `portafolio-web`. Si ya inicializaste Git, omite `git init -b main`.
+Abre `http://localhost:8080/`. Para desarrollar el backend local:
+
+```powershell
+npx supabase start
+npx supabase db reset
+npx supabase functions serve
+```
+
+## GitHub Pages
+
+El workflow `.github/workflows/pages.yml` publica el contenido al hacer push a `main`. En **Settings → Pages**, la fuente debe ser **GitHub Actions**.
+
+Las páginas Cauce Energía y Punto de guardado incluyen contenido de muestra. El catálogo gamer no procesa pagos. El sitio dental es conceptual y no debe usarse para recibir citas hasta completar la configuración indicada arriba.

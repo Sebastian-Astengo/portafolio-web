@@ -1,0 +1,147 @@
+.admin-page{
+min-height:100svh;background:var(--soft)}
+.admin-shell{
+max-width:980px;margin:0 auto;padding:28px 24px 40px}
+.admin-top{
+display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:2px solid var(--line);font-size:14px}
+.admin-top p{
+margin:0;color:var(--muted)}
+.admin-panel{
+max-width:800px;margin:8vh auto 70px;padding:clamp(24px,5vw,58px);background:var(--page)}
+.admin-panel h1{
+font-weight:400;font-size:clamp(38px,6vw,60px);letter-spacing:-.05em;line-height:1.08;margin:0 0 19px}
+.admin-status,.agenda-notice{
+padding:14px 16px;background:#f7f5ec;border-left:3px solid #8b6f3d;color:#514831;font-size:14px}
+.login-form{
+display:grid;max-width:420px;gap:9px;margin-top:30px}
+.login-form label,.agenda-tools label{
+margin-top:9px;font-size:14px;font-weight:500}
+.login-form input,.agenda-tools input{
+min-height:46px;padding:10px 12px;border:1px solid #bdcdc4;background:white;color:var(--ink)}
+.login-form button{
+margin-top:13px;justify-self:start}
+.agenda-tools{
+display:grid;grid-template-columns:auto 1fr auto 1fr;align-items:center;gap:10px 15px;margin:28px 0}
+.agenda-tools label{
+margin:0}
+.view-switch{
+grid-column:1/-1;display:flex;border-bottom:2px solid var(--line)}
+.view-switch button{
+min-height:42px;padding:8px 16px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
+.view-switch button[aria-pressed=true]{
+border-color:var(--green);color:var(--green-dark)}
+.appointment-list{
+display:grid;gap:9px;margin-top:18px}
+.appointment{
+padding:17px 18px;display:grid;grid-template-columns:125px 1fr auto;gap:10px 18px;align-items:center;background:white;border-left:3px solid var(--green)}
+.appointment[data-status="pending"]{
+border-color:#b08b45}
+.appointment time{
+font-size:15px;font-weight:500}
+.appointment h2{
+font-size:16px;font-weight:500;margin:0}
+.appointment p{
+font-size:14px;margin:3px 0 0;color:var(--muted)}
+.appointment .appointment-actions{
+display:flex;gap:8px}
+.appointment-actions button{
+min-height:40px;padding:7px 10px;border:1px solid var(--line);background:white;color:var(--ink);cursor:pointer}
+.appointment-actions button:hover{
+border-color:var(--green);color:var(--green-dark)}
+.appointment-actions .cancel{
+color:#843c36}
+.appointment-code{
+font-size:13px;color:var(--muted)}
+.empty-agenda{
+padding:22px 0;color:var(--muted)}
+.logout{
+margin-top:25px;border:0;background:transparent;cursor:pointer}
+.admin-footer{
+text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:640px){
+.admin-shell{
+padding-inline:15px}
+.admin-panel{
+margin-top:35px;padding:22px 17px}
+.agenda-tools{
+grid-template-columns:1fr 1fr}
+.agenda-tools label{
+grid-column:auto}
+.appointment{
+grid-template-columns:1fr auto}
+.appointment time{
+grid-column:1/-1}
+.appointment .appointment-actions{
+grid-column:1/-1}
+.appointment-actions button{
+flex:1}
+}
+
+.appointment-actions{
+display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.admin-action{
+min-height:42px;padding:10px 14px;border:1px solid #789184;background:transparent;color:#24372f;font:inherit;font-size:14px;cursor:pointer}
+.admin-action:hover{
+background:#e9f0eb}
+.admin-action:disabled{
+opacity:.5;cursor:wait}
+.empty-agenda{
+padding:24px;color:#59685f}
+#reschedule-dialog{
+width:min(500px,calc(100vw - 32px));border:1px solid #ccd7d0;padding:28px;background:#f6f8f6;color:#27352e}
+#reschedule-dialog::backdrop{
+background:#14241c88}
+#reschedule-dialog form{
+display:grid;gap:16px}
+#reschedule-dialog h2{
+margin:0;font-size:28px}
+#reschedule-dialog p{
+margin:0;color:#65716a}
+#reschedule-dialog input{
+min-height:48px;padding:10px;border:1px solid #aab8af;background:white;font:inherit}
+#reschedule-dialog menu{
+display:flex;justify-content:flex-end;gap:10px;padding:0;margin:12px 0 0}
+#reschedule-dialog menu button{
+min-height:44px;padding:10px 14px;border:1px solid #789184;background:transparent;font:inherit;cursor:pointer}
+#reschedule-dialog menu button:last-child{
+background:#2f6551;color:white}
+
+.appointment-card{
+padding:18px 20px;background:white;border-left:3px solid var(--green)}
+.appointment-card-top{
+display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.appointment-card h2{
+font-size:18px;font-weight:500;line-height:1.4;margin:0 0 12px}
+.appointment-card p{
+font-size:14px;line-height:1.55;margin:4px 0;color:var(--muted)}
+.appointment-card .appointment-code{
+white-space:nowrap;font-family:inherit;font-size:13px;color:var(--green-dark)}
+.appointment-card[data-status="pending"]{
+border-left-color:#8b6f3d}
+.admin-action:focus-visible{
+outline:3px solid #6cae97;outline-offset:3px}
+@media(max-width:640px){
+.appointment-card{
+padding:16px}
+.appointment-card-top{
+display:block}
+.appointment-card .appointment-code{
+display:inline-block;margin:4px 0 9px}
+.appointment-actions{
+display:grid;grid-template-columns:1fr}
+.admin-action{
+width:100%}
+}
+
+[hidden]{
+display:none!important}
+.agenda-actions{
+display:flex;justify-content:flex-end;margin:16px 0}
+.admin-page dialog select,.admin-page dialog input:not([type=checkbox]){
+width:100%;min-height:46px;padding:10px;border:1px solid #aab8af;background:white;color:var(--ink);font:inherit}
+.manual-consent{
+display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
+.manual-consent input{
+flex:0 0 20px;width:20px;height:20px;accent-color:var(--green)}
+#manual-dialog{
+max-height:min(88vh,850px);overflow:auto}
