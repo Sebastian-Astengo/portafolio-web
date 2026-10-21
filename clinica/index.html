@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="clinic.css?v=pausa-layout-2">
+  <link rel="stylesheet" href="clinic.css?v=pausa-layout-3">
 </head>
 <body>
   <header class="masthead" id="inicio">
@@ -38,10 +38,14 @@
     </section>
 
     <section class="care-section photo-scene" id="atencion" data-scene="consultorio" aria-labelledby="care-title">
-      <div class="section-margin care-aside"><p>El cuidado se conversa.</p><span>La clínica confirmará cada servicio antes de ofrecerlo.</span><figure class="care-photo"><img src="assets/photos/consultorio.jpg" width="1400" height="933" alt="Consultorio dental de referencia con equipamiento clínico"><figcaption>Fotografía referencial</figcaption></figure></div>
-      <div class="section-content">
+      <div class="care-intro">
         <h2 id="care-title">Atención<br>que escucha.</h2>
         <p class="section-lede">Estas son áreas de atención de referencia para presentar el sitio. La clínica tendrá que validar qué servicios ofrece y cómo los describe.</p>
+      </div>
+      <div class="care-layout">
+        <figure class="care-photo"><img src="assets/photos/consultorio.jpg" width="1400" height="933" alt="Consultorio dental de referencia con equipamiento clínico"><figcaption>Fotografía referencial</figcaption></figure>
+        <div class="care-options">
+          <p class="care-options-note">El cuidado se conversa. La clínica confirmará cada servicio antes de ofrecerlo.</p>
         <ul class="care-list">
           <li><details><summary><div><h3>Evaluación dental</h3><p>Una revisión inicial para conversar sobre tus necesidades.</p></div><span class="care-arrow" aria-hidden="true">↗</span></summary><div class="care-detail"><p>La primera conversación sirve para explicar qué te trae a consulta, resolver tus dudas y conocer los siguientes pasos de una evaluación profesional.</p><a class="text-link" href="#primera-visita">Así sería la primera visita <span aria-hidden="true">↓</span></a></div></details></li>
           <li><details><summary><div><h3>Prevención e higiene</h3><p>Orientación profesional para el cuidado cotidiano.</p></div><span class="care-arrow" aria-hidden="true">↗</span></summary><div class="care-detail"><p>El profesional puede revisar tus hábitos de cuidado y conversar contigo sobre recomendaciones adecuadas para tu situación.</p></div></details></li>
@@ -49,21 +53,21 @@
           <li><details><summary><div><h3>Estética dental</h3><p>Opciones que se conversan después de una valoración.</p></div><span class="care-arrow" aria-hidden="true">↗</span></summary><div class="care-detail"><p>Una conversación sobre expectativas y alternativas posibles, siempre con valoración profesional previa y sin prometer resultados.</p></div></details></li>
         </ul>
         <p class="section-footnote">Servicios referenciales. No se publican precios ni se prometen resultados clínicos.</p>
+        </div>
       </div>
     </section>
 
     <section class="visit-section photo-scene" id="primera-visita" data-scene="consulta" aria-labelledby="visit-title">
-      <div class="section-margin"><p>Primero se escucha.</p><span>Después, el profesional explica lo que observa.</span></div>
-      <div class="section-content visit-content">
+      <div class="visit-intro">
         <h2 id="visit-title">Primero,<br>conversamos.</h2>
         <p class="section-lede">Una primera consulta no debería sentirse como un examen. La propuesta es dejar espacio para conversar y tomar decisiones informadas.</p>
-        <ol class="visit-steps">
-          <li><span class="step-shape" aria-hidden="true">a</span><div><h3>Nos cuentas</h3><p>Conversamos sobre el motivo de tu visita y tus preguntas.</p></div></li>
-          <li><span class="step-shape" aria-hidden="true">b</span><div><h3>Te explicamos</h3><p>El profesional describe la evaluación y lo que observa.</p></div></li>
-          <li><span class="step-shape" aria-hidden="true">c</span><div><h3>Tú decides</h3><p>Revisas las opciones antes de acordar cualquier tratamiento.</p></div></li>
-        </ol>
-        <p class="section-footnote">El diagnóstico y las recomendaciones corresponden a un profesional de salud después de evaluarte.</p>
       </div>
+      <ol class="visit-steps">
+        <li><span class="step-shape" aria-hidden="true">01</span><div><h3>Nos cuentas</h3><p>Conversamos sobre el motivo de tu visita y tus preguntas.</p></div></li>
+        <li><span class="step-shape" aria-hidden="true">02</span><div><h3>Te explicamos</h3><p>El profesional describe la evaluación y lo que observa.</p></div></li>
+        <li><span class="step-shape" aria-hidden="true">03</span><div><h3>Tú decides</h3><p>Revisas las opciones antes de acordar cualquier tratamiento.</p></div></li>
+      </ol>
+      <p class="section-footnote">El diagnóstico y las recomendaciones corresponden a un profesional de salud después de evaluarte.</p>
     </section>
 
     <section class="people-section photo-scene" data-scene="atencion" aria-labelledby="people-title">

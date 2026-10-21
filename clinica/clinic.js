@@ -7,7 +7,7 @@
     const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
     }), { threshold: 0.08 });
-    const targets = '.opening-copy .lede,.opening-copy .intro-actions,.opening-copy .intro-footnote,.care-section .section-lede,.care-list li,.section-content>.section-lede,.visit-steps li,.people-copy>p,.people-copy .text-link,.booking-content>.booking-intro,.booking-content .booking-step,.faq-list details';
+    const targets = '.opening-copy .lede,.opening-copy .intro-actions,.opening-copy .intro-footnote,.care-intro .section-lede,.care-photo,.care-options-note,.care-list li,.section-content>.section-lede,.visit-intro .section-lede,.visit-steps li,.people-copy>p,.people-copy .text-link,.booking-content>.booking-intro,.booking-content .booking-step,.faq-list details';
     document.querySelectorAll('.photo-scene').forEach((section) => {
       section.querySelectorAll(targets).forEach((element, index) => {
         element.classList.add('reveal-item'); element.style.setProperty('--reveal-delay', `${Math.min(index, 5) * 65}ms`); revealObserver.observe(element);
