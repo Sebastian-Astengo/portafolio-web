@@ -18,9 +18,6 @@ if (headerMenu && mainNav) {
 
 let scrollTicking = false;
 const updateScrollUI = () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0;
-  document.documentElement.style.setProperty('--scroll-progress', progress + '%');
   header?.classList.toggle('is-scrolled', window.scrollY > 30);
   scrollTicking = false;
 };
@@ -114,7 +111,7 @@ if (form) {
     const role = String(data.get('role') || '').trim();
     const interest = String(data.get('interest') || data.get('type') || '').trim();
     const message = String(data.get('message') || '').trim();
-    const subject = encodeURIComponent('Consulta empresarial — ' + company);
+    const subject = encodeURIComponent('Consulta empresarial: ' + company);
     const body = encodeURIComponent(
       'Hola, soy ' + name + (role ? ', del área de ' + role : '') + ', de ' + company + ' (' + email + ').\n\nMe interesa explorar: ' + interest + '.\n\n' + message + '\n\nQuisiera conversar sobre una evaluación inicial.'
     );
@@ -124,23 +121,5 @@ if (form) {
       note.classList.add('success');
     }
     window.location.href = 'mailto:hola@cauceenergia.example?subject=' + subject + '&body=' + body;
-  });
-}
-
-const heroImage = document.querySelector('.hero-art img');
-if (heroImage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  let pointerFrame = 0;
-  document.querySelector('.hero-art')?.addEventListener('pointermove', (event) => {
-    if (event.pointerType === 'touch') return;
-    if (pointerFrame) cancelAnimationFrame(pointerFrame);
-    pointerFrame = requestAnimationFrame(() => {
-      const rect = event.currentTarget.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      heroImage.style.transform = 'scale(1.08) translate(' + (x * -8) + 'px, ' + (y * -8) + 'px)';
-    });
-  });
-  document.querySelector('.hero-art')?.addEventListener('pointerleave', () => {
-    heroImage.style.transform = '';
   });
 }
