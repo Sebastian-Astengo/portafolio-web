@@ -1,6 +1,6 @@
 # Portafolio web — Sebastián
 
-Cuatro conceptos web completos, listos para publicar como un sitio estático en GitHub Pages:
+Cuatro conceptos web listos para publicar como sitio estático en GitHub Pages. Cauce Energía ahora incluye seis páginas conectadas: inicio, soluciones, aplicaciones, método, empresa y contacto.
 
 | Demo | Ruta | Enfoque |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ Abre `index.html` en un navegador. Las fotografías se sirven desde Unsplash, as
 
 - Cambia “Sebastián” y `hola@ejemplo.com` en `index.html` por tu nombre y contacto.
 - Los nombres, negocios, inmuebles, textos, precios y correos de las demos son contenido conceptual para portafolio. Sustitúyelos si ya tienes proyectos reales.
-- La marca Cauce Energía es ficticia. Su formulario prepara un correo usando `mailto:`.
+- La marca Cauce Energía es ficticia y su web de empresa es multipágina. Incluye navegación responsive, filtros por tipo de operación, pestañas, acordeones, animaciones de entrada y un formulario demostrativo que prepara un correo usando `mailto:`.
 - La bolsa de Nativa es una interacción demostrativa; no procesa pagos ni pedidos.
 - El formulario de Brisa 28 abre un correo mediante `mailto:`; no almacena ni envía datos a un servidor.
 - Revisa los enlaces de contacto `@ejemplo.com` y `@nativa.example` antes de compartir el sitio.
