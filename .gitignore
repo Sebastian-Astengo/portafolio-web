@@ -8,3 +8,6 @@ supabase/.env
 .agents/
 skills-lock.json
 .codex/
+
+# Temporary Chrome screenshot profile
+assets/captures/chrome-profile/

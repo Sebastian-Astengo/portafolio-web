@@ -1,48 +1,38 @@
-# Portafolio web — Sebastián
+# Portafolio web — Sebastián Astengo
 
-Sitio estático publicado en GitHub Pages con cuatro proyectos: Cauce Energía, la tienda gamer Punto de guardado, Pausa Dental y Brisa 28.
+Portafolio estático publicado en GitHub Pages. Reúne cuatro demostraciones conceptuales, sus páginas de caso de estudio y ejemplos de soluciones web para negocios.
 
-| Proyecto | Ruta | Alcance |
-| --- | --- | --- |
-| Cauce Energía | `/empresa/` | Sitio corporativo multipágina |
-| Punto de guardado | `/tienda/` | Catálogo gamer y bolsa demostrativa |
-| Pausa Dental | `/clinica/` | Identidad editorial, fotografías de referencia y flujo de reserva conectado a Supabase cuando se configure |
-| Brisa 28 | `/inmobiliaria/` | Proyecto residencial conceptual con filtros, favoritos, comparación de tipologías y simulador hipotecario |
+## Proyectos
 
-## Arquitectura de la clínica
+| Proyecto | Demo | Caso de estudio | Alcance real de la demo |
+| --- | --- | --- | --- |
+| Cauce Energía | [`empresa/`](empresa/) | [`proyectos/cauce-energia.html`](proyectos/cauce-energia.html) | Sitio corporativo multipágina. El formulario prepara un resumen en el navegador; no envía datos. |
+| Punto de guardado | [`tienda/`](tienda/) | [`proyectos/punto-de-guardado.html`](proyectos/punto-de-guardado.html) | Catálogo de muestra con filtros y bolsa interactiva. No procesa pagos ni pedidos. |
+| Pausa Dental | [`clinica/`](clinica/) | [`proyectos/pausa-dental.html`](proyectos/pausa-dental.html) | Sitio de presentación; las reservas están desactivadas. El repositorio incluye infraestructura Supabase de referencia, pendiente de configuración. |
+| Brisa 28 | [`inmobiliaria/`](inmobiliaria/) | [`proyectos/brisa-28.html`](proyectos/brisa-28.html) | Exploración, favoritos, comparación y simulador ilustrativo. No representa inmuebles disponibles ni asesoría financiera. |
 
-- Frontend estático responsive en `clinica/`, publicado por GitHub Pages.
-- PostgreSQL, autenticación, políticas RLS y funciones server-side en `supabase/`.
-- La base de datos es el registro de reservas; una restricción de exclusión impide solapamientos por profesional.
-- Google Calendar lee ocupaciones y sincroniza eventos con las funciones Edge. Los eventos no contienen nombre, teléfono, correo ni notas clínicas.
-- Correo transaccional y recordatorios se procesan mediante una cola idempotente; WhatsApp queda como integración opcional.
-- El panel `/clinica/admin.html` exige usuario autenticado con rol autorizado.
-- La clínica y sus servicios se dejan sin datos ficticios. No se muestran horas ni se aceptan reservas hasta conectar un backend y cargar horarios reales.
+Los cuatro proyectos son conceptos de portafolio y no deben presentarse como clientes, marcas o resultados comerciales reales. Las páginas de caso describen los objetivos, las decisiones, las interacciones disponibles y las tecnologías del código.
 
-## Activación
+## Sobre el sitio
 
-Consulta `clinica/CONFIGURACION.md` para crear un proyecto Supabase, aplicar la migración, cargar servicios, profesionales y horarios confirmados, configurar Google Calendar y correo, crear el primer usuario administrador y desplegar las funciones. Las claves privadas se guardan en los secretos de Supabase; nunca en GitHub Pages.
-
-La web incluye políticas provisionales para revisión: antes de recibir datos personales, la clínica debe completar su identidad, finalidades, plazos, canales de ejercicio de derechos y demás información aplicable. Esta implementación no constituye una certificación legal.
+- Portada, proyectos, servicios, presentación y contacto en [`index.html`](index.html).
+- Casos de estudio y capturas en `proyectos/` y `assets/captures/`.
+- Los enlaces del sitio usan rutas relativas para que funcionen bajo `/portafolio-web/` en GitHub Pages.
+- El sitio está en español; se puede incorporar una futura versión en inglés con páginas y metadatos localizados.
+- No hay formulario de contacto activo. El correo profesional, LinkedIn y un CV descargable quedan pendientes de confirmar.
 
 ## Desarrollo local
 
-Requiere Node.js y Supabase CLI. Sirve los archivos estáticos desde la raíz para conservar las rutas:
+Sirve el contenido estático desde la raíz para probar las rutas:
 
 ```powershell
 py -m http.server 8080
 ```
 
-Abre `http://localhost:8080/`. Para desarrollar el backend local:
+Abre `http://localhost:8080/`.
 
-```powershell
-npx supabase start
-npx supabase db reset
-npx supabase functions serve
-```
+Para trabajar con la demo dental local y su backend de referencia, consulta [`clinica/CONFIGURACION.md`](clinica/CONFIGURACION.md). Sus políticas, horarios y conexiones deben revisarse antes de recibir datos reales.
 
-## GitHub Pages
+## Publicación
 
-El workflow `.github/workflows/pages.yml` publica el contenido al hacer push a `main`. En **Settings → Pages**, la fuente debe ser **GitHub Actions**.
-
-Las páginas Cauce Energía, Punto de guardado y Brisa 28 incluyen contenido de muestra. El catálogo gamer no procesa pagos. Brisa 28 no representa una propiedad disponible: metrajes, planos, fechas y condiciones deben confirmarse antes de cualquier uso comercial. Su simulador ofrece una estimación matemática y no una cotización financiera. El sitio dental es conceptual y no debe usarse para recibir citas hasta completar la configuración indicada arriba.
+El workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publica el contenido de `main` en GitHub Pages mediante GitHub Actions. En **Settings → Pages**, la fuente debe ser **GitHub Actions**.
