@@ -7,3 +7,4 @@ supabase/.env
 .taste-skill/
 .agents/
 skills-lock.json
+.codex/

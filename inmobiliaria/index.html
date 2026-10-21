@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b3c">
+  <meta name="description" content="Brisa 28, proyecto residencial conceptual en Barranco. Explora tipologías, compara espacios y calcula una cuota estimada.">
+  <title>Brisa 28 — vive cerca del mar</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="realty.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Brisa 28, inicio">BRISA<span> / 28</span></a>
+    <nav aria-label="Navegación principal" id="primary-nav">
+      <a href="#proyecto">El proyecto</a>
+      <a href="#unidades">Tipologías</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="header-cta" href="#contacto">Consultar proyecto <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=88" alt="Terraza contemporánea abierta hacia el paisaje costero" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="hero-place">BARRANCO · LIMA · PERÚ</p>
+        <h1 id="hero-title">El mar,<br>tu nueva <em>perspectiva.</em></h1>
+        <p>Veintiocho residencias donde la vida de barrio y el horizonte del Pacífico se encuentran.</p>
+        <div class="hero-actions"><a class="button" href="#unidades">Explorar tipologías <span aria-hidden="true">↓</span></a><a class="hero-secondary" href="#simulador">Calcular una cuota</a></div>
+      </div>
+      <span class="hero-side">COSTA VERDE <i>—</i> LIMA</span>
+      <span class="hero-count">BRISA 28 · BARRANCO</span>
+      <span class="hero-bottom">UNA NUEVA FORMA DE HABITAR LA CIUDAD</span>
+    </section>
+
+    <section class="overview" id="proyecto" aria-labelledby="project-title">
+      <div class="overview-top"><p class="overview-number">EL PROYECTO <span>/ BARRANCO</span></p></div>
+      <div class="overview-body"><h2 id="project-title">La ciudad a tu ritmo.<br><em>El mar a un paso.</em></h2><div><p>Brisa 28 recoge lo mejor de Barranco: calles con carácter, cultura local y el horizonte del Pacífico como parte de cada día.</p><p>Un proyecto residencial de escala cuidada, con espacios comunes pensados para vivirlos y luz natural en el centro de la experiencia.</p><a href="#espacios" class="text-link">Conocer los espacios <span aria-hidden="true">↘</span></a></div></div>
+      <div class="facts" aria-label="Datos generales del proyecto"><div><span>28</span><p>RESIDENCIAS CONCEPTUALES</p></div><div><span>1—3</span><p>DORMITORIOS</p></div><div><span>68—184</span><p>M² REFERENCIALES</p></div><div><span>2027</span><p>ENTREGA POR CONFIRMAR</p></div></div>
+      <p class="project-note">Superficies, características y fechas son referenciales para este concepto. La inmobiliaria debe confirmarlas.</p>
+    </section>
+
+    <section class="units" id="unidades" aria-labelledby="units-title">
+      <div class="units-heading"><div><h2 id="units-title">Tres formas<br>de <em>sentirte en casa.</em></h2></div><p>Explora distribuciones de referencia. Guarda tus favoritas y compara lo que importa antes de conversar con el equipo comercial.</p></div>
+      <div class="unit-toolbar" aria-label="Filtros de tipologías">
+        <label>Habitaciones<select id="filter-beds"><option value="all">Todas</option><option value="1">1 dormitorio</option><option value="2">2 dormitorios</option><option value="3">3 dormitorios</option></select></label>
+        <label>Ordenar por<select id="sort-units"><option value="recommended">Recomendadas</option><option value="area-asc">Menor superficie</option><option value="area-desc">Mayor superficie</option></select></label>
+        <button class="saved-toggle" id="saved-toggle" type="button" aria-pressed="false">Ver guardadas <span id="saved-count">0</span></button>
+        <button class="clear-filters" id="clear-filters" type="button">Limpiar</button>
+      </div>
+      <p class="results-note" id="results-note" aria-live="polite"></p>
+      <div class="unit-grid" id="unit-grid">
+        <article class="unit-card" data-id="tipo-a" data-beds="1" data-area="68" data-rank="1">
+          <div class="unit-photo"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85" alt="Sala de departamento luminosa con materiales naturales" loading="lazy"><span class="unit-index">TIPO A · 1 DORMITORIO</span><button class="favorite-button" type="button" aria-label="Guardar tipología de un dormitorio" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button></div>
+          <div class="unit-body"><div class="unit-title"><div><h3>Un dormitorio</h3></div><span class="unit-number">A</span></div><dl class="unit-specs"><div><dt>Área ref.</dt><dd>68 m²</dd></div><div><dt>Dormitorios</dt><dd>1</dd></div><div><dt>Baños ref.</dt><dd>1</dd></div><div><dt>Precio</dt><dd>Consultar</dd></div></dl><p class="unit-description">Una distribución abierta que reúne sala, comedor y cocina, con espacio para bajar el ritmo al final del día.</p><details class="unit-details"><summary>Ver distribución sugerida</summary><p>Área social integrada, dormitorio principal y un espacio flexible para guardar o trabajar. El plano definitivo está sujeto a confirmación.</p></details><div class="unit-actions"><a href="#simulador" class="unit-link" data-select-unit="tipo-a">Simular cuota <span aria-hidden="true">↗</span></a><button class="compare-button" type="button" aria-pressed="false">Comparar</button></div></div>
+        </article>
+        <article class="unit-card" data-id="tipo-b" data-beds="2" data-area="112" data-rank="2">
+          <div class="unit-photo"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1100&q=85" alt="Comedor y sala conectados en un departamento contemporáneo" loading="lazy"><span class="unit-index">TIPO B · 2 DORMITORIOS</span><button class="favorite-button" type="button" aria-label="Guardar tipología de dos dormitorios" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button></div>
+          <div class="unit-body"><div class="unit-title"><div><h3>Dos dormitorios</h3></div><span class="unit-number">B</span></div><dl class="unit-specs"><div><dt>Área ref.</dt><dd>112 m²</dd></div><div><dt>Dormitorios</dt><dd>2</dd></div><div><dt>Baños ref.</dt><dd>2</dd></div><div><dt>Precio</dt><dd>Consultar</dd></div></dl><p class="unit-description">Dos dormitorios y una zona común amplia para abrir la casa a las visitas, las comidas largas y la vida diaria.</p><details class="unit-details"><summary>Ver distribución sugerida</summary><p>Dormitorio principal, dormitorio secundario y área social conectada. La inmobiliaria debe confirmar planos y acabados.</p></details><div class="unit-actions"><a href="#simulador" class="unit-link" data-select-unit="tipo-b">Simular cuota <span aria-hidden="true">↗</span></a><button class="compare-button" type="button" aria-pressed="false">Comparar</button></div></div>
+        </article>
+        <article class="unit-card" data-id="tipo-c" data-beds="3" data-area="184" data-rank="3">
+          <div class="unit-photo"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" alt="Área social amplia con salida a una terraza" loading="lazy"><span class="unit-index">TIPO C · 3 DORMITORIOS</span><button class="favorite-button" type="button" aria-label="Guardar tipología de tres dormitorios" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button></div>
+          <div class="unit-body"><div class="unit-title"><div><h3>Tres dormitorios</h3></div><span class="unit-number">C</span></div><dl class="unit-specs"><div><dt>Área ref.</dt><dd>184 m²</dd></div><div><dt>Dormitorios</dt><dd>3</dd></div><div><dt>Baños ref.</dt><dd>3</dd></div><div><dt>Precio</dt><dd>Consultar</dd></div></dl><p class="unit-description">Una distribución amplia para quienes necesitan ambientes distintos sin perder la sensación de estar juntos.</p><details class="unit-details"><summary>Ver distribución sugerida</summary><p>Tres dormitorios, una zona social generosa y espacios de apoyo. Superficie y número de baños por confirmar con el proyecto real.</p></details><div class="unit-actions"><a href="#simulador" class="unit-link" data-select-unit="tipo-c">Simular cuota <span aria-hidden="true">↗</span></a><button class="compare-button" type="button" aria-pressed="false">Comparar</button></div></div>
+        </article>
+      </div>
+      <p class="units-disclaimer">Las tipologías y superficies son ilustrativas. No representan unidades disponibles ni sustituyen planos, cotizaciones o información comercial del proyecto.</p>
+    </section>
+
+    <section class="compare-tray" id="compare-tray" hidden aria-label="Comparación de tipologías" aria-live="polite"><div><p class="compare-title">Comparación</p><p id="compare-summary">Elige hasta tres tipologías para compararlas.</p></div><div class="compare-items" id="compare-items"></div><button class="compare-clear" id="compare-clear" type="button">Limpiar comparación</button></section>
+
+    <section class="calculator" id="simulador" aria-labelledby="calculator-title">
+      <div class="calculator-copy"><h2 id="calculator-title">Una cuota<br><em>para imaginar.</em></h2><p>Ingresa un precio y ajusta los datos para estimar una cuota mensual. Es una simulación simple, no una oferta de crédito.</p><p class="calculator-footnote">No incluye seguros, impuestos, comisiones ni condiciones de una entidad financiera.</p></div>
+      <form class="calculator-form" id="calculator-form">
+        <p class="selected-unit-note" id="selected-unit-note">El precio no está publicado. Ingresa un monto de referencia para hacer tu propia simulación.</p><label for="home-price">Precio de referencia <span>S/</span></label><input id="home-price" name="price" type="number" inputmode="numeric" min="1000" step="1000" placeholder="Ej. 650000" required>
+        <div class="calculator-row"><label for="down-payment">Cuota inicial <span id="down-percent">20%</span><input id="down-payment" name="downPayment" type="range" min="10" max="50" step="5" value="20"></label><label for="interest-rate">Tasa anual nominal referencial<input id="interest-rate" name="rate" type="number" min="0.1" max="30" step="0.1" value="9" required></label></div>
+        <label for="loan-years">Plazo del crédito</label><select id="loan-years" name="years"><option value="10">10 años</option><option value="15">15 años</option><option value="20" selected>20 años</option><option value="25">25 años</option><option value="30">30 años</option></select>
+        <button class="button calculator-submit" type="submit">Calcular cuota <span aria-hidden="true">↗</span></button>
+        <div class="calculator-result" id="calculator-result" aria-live="polite"><p>Tu estimación aparecerá aquí.</p></div>
+      </form>
+    </section>
+
+    <section class="spaces" id="espacios" aria-labelledby="spaces-title"><div class="spaces-head"><div><h2 id="spaces-title">Espacios que<br><em>se abren.</em></h2></div><p>La luz natural guía el recorrido. Los materiales honestos, la vegetación y los espacios compartidos hacen que llegar a casa se sienta distinto.</p></div><div class="space-images"><figure class="space-large"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Sala amplia de un departamento contemporáneo" loading="lazy"><figcaption>INTERIORES · LUZ NATURAL</figcaption></figure><figure class="space-small"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1000&q=85" alt="Área común conectada con el exterior" loading="lazy"><figcaption>ESPACIOS · PARA COMPARTIR</figcaption></figure></div></section>
+
+    <section class="location" id="ubicacion" aria-labelledby="location-title"><div class="location-image"><img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1500&q=85" alt="Paisaje urbano y costero de Lima" loading="lazy"><span class="map-label">BARRANCO · LIMA</span></div><div class="location-copy"><h2 id="location-title">Un lugar con<br><em>vida propia.</em></h2><p>Barranco reúne cultura, cafés, galerías y paseos frente al Pacífico. Una invitación a vivir el barrio a pie y descubrir sus rincones con tiempo.</p><div class="nearby"><div><span>AFUERA</span><p>El malecón y el horizonte del Pacífico</p></div><div><span>EN EL BARRIO</span><p>Puente de los Suspiros y calles históricas</p></div><div><span>A LA VUELTA</span><p>Galerías, cafés y vida cultural</p></div></div><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Barranco%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noreferrer">Explorar Barranco en Maps <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="contact" id="contacto" aria-labelledby="contact-title"><div><h2 id="contact-title">El siguiente paso<br>puede ser <em>tu hogar.</em></h2><p class="contact-note">Cuéntanos qué buscas. Podrás preparar una consulta y abrirla en tu correo para enviarla al equipo comercial.</p></div><form id="lead-form"><label for="name">Nombre completo</label><input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required minlength="2"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required><label for="phone">Teléfono <span>(opcional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+51"><label for="interest">¿Qué te gustaría conocer?</label><select id="interest" name="interest"><option value="información">Información del proyecto</option><option value="tipologías">Tipologías y superficies</option><option value="visita">Coordinar una visita</option><option value="financiamiento">Opciones de financiamiento</option></select><button class="button" type="submit">Preparar consulta <span aria-hidden="true">↗</span></button><p class="form-note" id="form-status" aria-live="polite">Tu correo se abrirá con la solicitud lista. Añade el contacto comercial para enviarla.</p><textarea id="prepared-message" class="prepared-message" aria-label="Mensaje preparado para copiar" readonly hidden></textarea><button class="copy-message" id="copy-message" type="button" hidden>Copiar solicitud</button></form></section>
+  </main>
+
+  <footer><a class="brand" href="#inicio">BRISA<span> / 28</span></a><p>Brisa 28 · Proyecto conceptual<br>Ubicación, disponibilidad y condiciones por confirmar.</p><a href="../">Volver a proyectos <span aria-hidden="true">↗</span></a></footer>
+  <script src="realty.js" defer></script>
+</body>
+</html>

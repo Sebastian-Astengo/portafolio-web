@@ -1,12 +1,13 @@
 # Portafolio web — Sebastián
 
-Sitio estático publicado en GitHub Pages con tres proyectos: Cauce Energía, la tienda gamer Punto de guardado y Pausa, una identidad conceptual para una clínica dental.
+Sitio estático publicado en GitHub Pages con cuatro proyectos: Cauce Energía, la tienda gamer Punto de guardado, Pausa Dental y Brisa 28.
 
 | Proyecto | Ruta | Alcance |
 | --- | --- | --- |
 | Cauce Energía | `/empresa/` | Sitio corporativo multipágina |
 | Punto de guardado | `/tienda/` | Catálogo gamer y bolsa demostrativa |
 | Pausa Dental | `/clinica/` | Identidad editorial, fotografías de referencia y flujo de reserva conectado a Supabase cuando se configure |
+| Brisa 28 | `/inmobiliaria/` | Proyecto residencial conceptual con filtros, favoritos, comparación de tipologías y simulador hipotecario |
 
 ## Arquitectura de la clínica
 
@@ -44,4 +45,4 @@ npx supabase functions serve
 
 El workflow `.github/workflows/pages.yml` publica el contenido al hacer push a `main`. En **Settings → Pages**, la fuente debe ser **GitHub Actions**.
 
-Las páginas Cauce Energía y Punto de guardado incluyen contenido de muestra. El catálogo gamer no procesa pagos. El sitio dental es conceptual y no debe usarse para recibir citas hasta completar la configuración indicada arriba.
+Las páginas Cauce Energía, Punto de guardado y Brisa 28 incluyen contenido de muestra. El catálogo gamer no procesa pagos. Brisa 28 no representa una propiedad disponible: metrajes, planos, fechas y condiciones deben confirmarse antes de cualquier uso comercial. Su simulador ofrece una estimación matemática y no una cotización financiera. El sitio dental es conceptual y no debe usarse para recibir citas hasta completar la configuración indicada arriba.
