@@ -1,24 +1,133 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f1">
-  <meta name="description" content="Nativa Estudio: objetos para el hogar diseñados con materiales nobles y hechos para acompañarte por años.">
-  <title>Nativa Estudio — objetos para todos los días</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f2ed">
+  <meta name="description" content="Periféricos y equipo para jugar cómodo, con criterio. Encuentra teclados, audio, mouse y accesorios en Punto de guardado.">
+  <title>Punto de guardado — equipo para jugar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shop.css">
 </head>
 <body>
-  <div class="announcement">HECHO CON CALMA, PARA DURAR <span>—</span> ENVÍOS A TODO EL PERÚ</div>
-  <header class="header"><a class="logo" href="#inicio">nativa<span>®</span></a><nav aria-label="Navegación principal"><a href="#coleccion">Colección</a><a href="#historia">Nuestra historia</a><a href="#contacto">Contacto</a></nav><button class="bag" type="button" aria-label="Bolsa de compras, 0 productos">Bolsa <span id="bag-count">0</span></button><button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button></header>
+  <div class="announcement"><span>Periféricos gamer</span><span aria-hidden="true">·</span><span>Selección en Lima</span></div>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Punto de guardado, inicio"><span class="logo-mark" aria-hidden="true"></span><span>punto de<br>guardado</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Navegación principal">
+      <a href="#equipo">Equipo</a><a href="#criterio">Cómo elegimos</a><a href="#ayuda">Ayuda</a>
+    </nav>
+    <button class="bag-button" type="button" aria-label="Abrir bolsa, 0 productos" aria-controls="bag-panel" aria-expanded="false">
+      <span>Tu bolsa</span><span class="bag-count" id="bag-count">0</span>
+    </button>
+  </header>
+
   <main id="inicio">
-    <section class="hero"><div class="hero-copy"><p class="eyebrow">DISEÑO LOCAL · LIMA, PERÚ</p><h1>Haz espacio<br>para lo <em>esencial.</em></h1><p>Objetos honestos para la casa que se vive, se comparte y se transforma todos los días.</p><a class="button" href="#coleccion">Explorar la colección <span>↗</span></a><div class="hero-foot"><span>01 — 04</span><span>OBJETOS PARA TODOS LOS DÍAS</span></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1300&q=85" alt="Composición de objetos artesanales en tonos naturales"><span class="image-note">PIEZAS CON HISTORIA<br>EDICIÓN 2026</span></div></section>
-    <section class="promise" id="historia"><p class="eyebrow">MENOS, PERO MEJOR</p><p>Creemos en el diseño que <em>permanece</em>: materiales de origen responsable, producción en pequeñas series y formas que encuentran su lugar en cualquier hogar.</p><a href="#coleccion">Conoce nuestra manera de hacer <span>↗</span></a></section>
-    <section class="collection" id="coleccion"><div class="section-title"><div><p class="eyebrow">LA COLECCIÓN 2026</p><h2>Piezas para quedarte.</h2></div><a href="#productos">VER TODO <span>↘</span></a></div><div class="products" id="productos">
-      <article class="product"><button class="product-photo" data-product="Cuenco Arena" aria-label="Agregar Cuenco Arena a la bolsa"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85" alt="Cuenco de cerámica hecho a mano"><span class="add">+ AÑADIR</span><span class="label">HECHO A MANO</span></button><div class="product-info"><h3>Cuenco Arena</h3><span>S/ 89</span><p>Cerámica gres · 14 cm</p></div></article>
-      <article class="product"><button class="product-photo" data-product="Jarrón Niebla" aria-label="Agregar Jarrón Niebla a la bolsa"><img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=85" alt="Jarrón de cerámica de líneas simples"><span class="add">+ AÑADIR</span><span class="label">SERIE LIMITADA</span></button><div class="product-info"><h3>Jarrón Niebla</h3><span>S/ 169</span><p>Arcilla local · 24 cm</p></div></article>
-      <article class="product"><button class="product-photo" data-product="Lámpara Umbral" aria-label="Agregar Lámpara Umbral a la bolsa"><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85" alt="Lámpara de mesa de diseño contemporáneo"><span class="add">+ AÑADIR</span><span class="label">DISEÑO NATIVA</span></button><div class="product-info"><h3>Lámpara Umbral</h3><span>S/ 420</span><p>Madera y lino · 32 cm</p></div></article>
-    </div></section>
-    <section class="closing" id="contacto"><div><p class="eyebrow">UN HOGAR QUE SE SIENTE TUYO</p><h2>Lo bueno<br>se queda.</h2><a class="button button-light" href="mailto:hola@nativa.example">Escríbenos <span>↗</span></a></div><p>¿Buscas algo especial?<br>Nos encantará ayudarte a encontrarlo.</p></section>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-paper">
+        <div class="hero-copy">
+          <h1 id="hero-title">Juega con<br>ventaja.</h1>
+          <p class="hero-lede">Tienda de periféricos para PC gamers: teclados, audio y controles.</p>
+          <a class="button button-dark" href="#equipo">Encuentra tu equipo <span aria-hidden="true">↘</span></a>
+          <p class="hero-note">Teclados · audio · controles</p>
+        </div>
+        <figure class="hero-art" aria-label="Ilustración de un espacio de juego con teclado, mouse y audífonos">
+          <img src="assets/setup.svg" width="900" height="740" fetchpriority="high" alt="Teclado mecánico, mouse y audífonos sobre un escritorio">
+          <figcaption>Equipo para cada partida <span>Selección de periféricos</span></figcaption>
+        </figure>
+        <div class="hero-facts" aria-label="Tres criterios de selección">
+          <p><strong>Se siente bien</strong><span>En sesiones largas</span></p>
+          <p><strong>Responde rápido</strong><span>Sin complicaciones</span></p>
+          <p><strong>Va contigo</strong><span>En juego y trabajo</span></p>
+        </div>
+      </div>
+      <div class="hero-edge"><span>Equipo seleccionado para jugar sin complicaciones.</span></div>
+    </section>
+
+    <section class="shop-section" id="equipo" aria-labelledby="shop-title">
+      <div class="shop-heading">
+        <div class="shop-heading-copy"><h2 id="shop-title">Arma tu punto.</h2><p class="shop-description">Seis piezas para empezar. Filtra por lo que buscas y guarda tu selección.</p></div>
+        <img class="shop-heading-art" src="assets/tag.svg" width="350" height="250" loading="lazy" alt="Ilustración de una ficha de equipo gamer">
+      </div>
+      <div class="shop-controls">
+        <div class="filters" role="group" aria-label="Filtrar productos">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Todo el equipo</button>
+          <button class="filter" type="button" data-filter="teclados" aria-pressed="false">Teclados</button>
+          <button class="filter" type="button" data-filter="mouse" aria-pressed="false">Mouse</button>
+          <button class="filter" type="button" data-filter="audio" aria-pressed="false">Audio</button>
+          <button class="filter" type="button" data-filter="accesorios" aria-pressed="false">Accesorios</button>
+        </div>
+        <label class="sort-control">Ordenar
+          <select id="sort-products" aria-label="Ordenar productos">
+            <option value="featured">Selección</option>
+            <option value="low">Precio: menor a mayor</option>
+            <option value="high">Precio: mayor a menor</option>
+          </select>
+        </label>
+      </div>
+      <p class="results-count" id="results-count" aria-live="polite">6 productos</p>
+      <div class="product-list" id="product-list">
+        <article class="product" data-category="teclados" data-price="329" data-name="Teclado K68">
+          <a class="product-art art-keyboard" href="#producto-k68" aria-label="Ver ficha de Teclado K68"><img src="assets/keyboard.svg" width="760" height="590" loading="lazy" alt="Teclado mecánico compacto color grafito"></a>
+          <div class="product-copy"><p class="product-type">Teclado · 65 %</p><h3 id="producto-k68">Teclado K68</h3><p class="product-detail">Switch lineal · conexión USB-C</p><div class="product-buy"><span class="product-price">S/ 329</span><button class="add-button" type="button" data-add="k68">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+        <article class="product" data-category="mouse" data-price="189" data-name="Mouse Vector M5">
+          <a class="product-art art-mouse" href="#producto-m5" aria-label="Ver ficha de Mouse Vector M5"><img src="assets/mouse.svg" width="760" height="590" loading="lazy" alt="Mouse ergonómico color grafito con acento azul"></a>
+          <div class="product-copy"><p class="product-type">Mouse · inalámbrico</p><h3 id="producto-m5">Mouse Vector M5</h3><p class="product-detail">26 000 DPI · carga USB-C</p><div class="product-buy"><span class="product-price">S/ 189</span><button class="add-button" type="button" data-add="m5">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+        <article class="product" data-category="audio" data-price="279" data-name="Audífonos Nube H1">
+          <a class="product-art art-headset" href="#producto-h1" aria-label="Ver ficha de Audífonos Nube H1"><img src="assets/headset.svg" width="760" height="590" loading="lazy" alt="Audífonos de diadema con micrófono desmontable"></a>
+          <div class="product-copy"><p class="product-type">Audio · diadema</p><h3 id="producto-h1">Audífonos Nube H1</h3><p class="product-detail">Micrófono desmontable · 3.5 mm</p><div class="product-buy"><span class="product-price">S/ 279</span><button class="add-button" type="button" data-add="h1">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+        <article class="product" data-category="audio" data-price="149" data-name="Micrófono Faro S1">
+          <a class="product-art art-mic" href="#producto-s1" aria-label="Ver ficha de Micrófono Faro S1"><img src="assets/mic.svg" width="760" height="590" loading="lazy" alt="Micrófono USB compacto sobre soporte de escritorio"></a>
+          <div class="product-copy"><p class="product-type">Audio · USB</p><h3 id="producto-s1">Micrófono Faro S1</h3><p class="product-detail">Control de ganancia · mute físico</p><div class="product-buy"><span class="product-price">S/ 149</span><button class="add-button" type="button" data-add="s1">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+        <article class="product" data-category="accesorios" data-price="119" data-name="Control Nexo C2">
+          <a class="product-art art-control" href="#producto-c2" aria-label="Ver ficha de Control Nexo C2"><img src="assets/controller.svg" width="760" height="590" loading="lazy" alt="Control inalámbrico color grafito con joysticks y botones"></a>
+          <div class="product-copy"><p class="product-type">Control · inalámbrico</p><h3 id="producto-c2">Control Nexo C2</h3><p class="product-detail">Bluetooth · compatible con PC</p><div class="product-buy"><span class="product-price">S/ 119</span><button class="add-button" type="button" data-add="c2">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+        <article class="product" data-category="accesorios" data-price="79" data-name="Base Plano D1">
+          <a class="product-art art-mat" href="#producto-d1" aria-label="Ver ficha de Base Plano D1"><img src="assets/mat.svg" width="760" height="590" loading="lazy" alt="Alfombrilla extendida para escritorio en tono azul oscuro"></a>
+          <div class="product-copy"><p class="product-type">Escritorio · superficie</p><h3 id="producto-d1">Base Plano D1</h3><p class="product-detail">Tejido de baja fricción · 80 × 30 cm</p><div class="product-buy"><span class="product-price">S/ 79</span><button class="add-button" type="button" data-add="d1">Agregar a la bolsa <span aria-hidden="true">+</span></button></div></div>
+        </article>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>No hay productos en esta categoría por ahora.</p>
+    </section>
+
+    <section class="selection" id="criterio" aria-labelledby="selection-title">
+      <div class="selection-copy"><h2 id="selection-title">Buen tacto.</h2><p>La ficha técnica ayuda; la comodidad y la conexión también importan. Por eso cada pieza se presenta con lo que necesitas para decidir sin perseguir luces ni cifras infladas.</p></div>
+      <div class="selection-art"><img src="assets/detail.svg" width="840" height="640" loading="lazy" alt="Detalle ilustrado de teclas mecánicas y controles de precisión"><p>Menos ruido visual. Más tiempo en partida.</p></div>
+    </section>
+
+    <section class="help" id="ayuda" aria-labelledby="help-title">
+      <div class="help-title"><h2 id="help-title">¿Qué elegir?</h2></div>
+      <div class="faq-list">
+        <details><summary>¿El equipo funciona con cualquier PC?</summary><p>La compatibilidad depende de cada pieza. Revisa la conexión y los requisitos indicados en su ficha; si tienes una duda concreta, escríbenos antes de decidir.</p></details>
+        <details><summary>¿Cómo elijo un teclado?</summary><p>Piensa en el espacio que tienes, el tipo de conexión y la sensación de las teclas. El K68 de esta selección usa switches lineales y ocupa menos que un teclado completo.</p></details>
+        <details><summary>¿Puedo combinar productos en una sola compra?</summary><p>Sí. Agrega varias piezas a tu bolsa para revisar juntas la selección y el total antes de preparar el pedido.</p></details>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title"><div><h2 id="closing-title">Equípate mejor.</h2><a class="button button-light" href="#equipo">Ver el equipo <span aria-hidden="true">↗</span></a></div><img src="assets/tag.svg" width="350" height="250" loading="lazy" alt="Etiqueta de inventario de Punto de guardado"></section>
   </main>
-  <footer><a class="logo" href="#inicio">nativa<span>®</span></a><p>Diseño consciente, desde Lima.<br>© 2026 Nativa Estudio</p><a href="../">Volver al portafolio ↗</a></footer>
-  <div class="toast" role="status" aria-live="polite"></div><script src="shop.js"></script>
-</body></html>
+
+  <footer class="footer">
+    <a class="logo logo-footer" href="#inicio"><span class="logo-mark" aria-hidden="true"></span><span>punto de<br>guardado</span></a>
+    <p>Equipo para jugar, desde Lima.</p>
+    <p class="demo-note">Marca y catálogo de muestra. Confirma precios, disponibilidad y especificaciones antes de vender.</p>
+    <a class="footer-link" href="#equipo">Explorar el catálogo</a>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="bag-panel" id="bag-panel" role="dialog" aria-modal="true" aria-labelledby="bag-title" aria-hidden="true" inert>
+    <div class="bag-header"><div><h2 id="bag-title">Tu selección</h2></div><button class="close-bag" type="button" aria-label="Cerrar bolsa">×</button></div>
+    <div class="bag-items" id="bag-items"><p class="bag-empty">Todavía no agregas equipo.</p></div>
+    <div class="bag-summary"><p><span>Total de referencia</span><strong id="bag-total">S/ 0</strong></p><button class="button button-dark copy-order" type="button" disabled>Copiar resumen</button><small>Este catálogo es una demostración y no procesa pagos.</small></div>
+  </aside>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="shop.js" defer></script>
+</body>
+</html>
