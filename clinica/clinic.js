@@ -15,6 +15,49 @@
     });
   }
 
+  // Keep service and FAQ disclosures easy to scan on both touch and keyboard.
+  document.querySelectorAll('.care-list details, .faq-list details').forEach((details) => {
+    details.addEventListener('toggle', () => {
+      if (!details.open) return;
+      const group = details.closest('.care-list, .faq-list');
+      group?.querySelectorAll('details[open]').forEach((other) => { if (other !== details) other.open = false; });
+    });
+  });
+
+  const shareButton = document.querySelector('#share-page');
+  const shareStatus = document.querySelector('#share-status');
+  shareButton?.addEventListener('click', async () => {
+    const shareData = { title: document.title, text: 'Conoce Pausa, una propuesta de clínica dental que empieza por escuchar.', url: location.href };
+    try {
+      if (navigator.share) await navigator.share(shareData);
+      else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareData.url);
+        shareStatus.textContent = 'Enlace copiado. Ya puedes compartirlo.';
+        return;
+      } else {
+        shareStatus.textContent = 'Copia el enlace desde la barra del navegador para compartirlo.';
+        return;
+      }
+      shareStatus.textContent = 'Gracias por compartir Pausa.';
+    } catch (error) {
+      if (error.name !== 'AbortError') shareStatus.textContent = 'No se pudo compartir. Prueba copiando el enlace del navegador.';
+    }
+  });
+
+  const navLinks = [...document.querySelectorAll('.masthead nav a')];
+  const navSections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && navSections.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => {
+        const active = link.hash === `#${visible.target.id}`;
+        if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, .15, .5] });
+    navSections.forEach((section) => sectionObserver.observe(section));
+  }
+
   const form = document.querySelector('#booking-form');
   if (!form) return;
   const alertBox = document.querySelector('#booking-alert');
